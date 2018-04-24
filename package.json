@@ -1,0 +1,26 @@
+{
+  "name": "jm-ab-bookserver",
+  "version": "1.0.0",
+  "description": "For our awesome book store",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMAB-bookstore/book-list-server.git"
+  },
+  "author": "Justin Morris and Andrew Baik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMAB-bookstore/book-list-server/issues"
+  },
+  "homepage": "https://github.com/JMAB-bookstore/book-list-server#readme",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "pg": "^7.4.1"
+  }
+}
