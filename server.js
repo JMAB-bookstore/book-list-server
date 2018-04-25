@@ -13,7 +13,7 @@ client.connect();
 client.on('error', err => console.error(err));
 
 app.use(express.json());
-// app.use(express.urlendcoded());
+app.use(express.urlendcoded({extended:true}));
 app.use(cors());
 
 app.get('/', (request, response) => response.send('AWESOME BOOKS!'));
