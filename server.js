@@ -45,6 +45,20 @@ app.post('/api/v1/books', (request, response) => {
     .catch( err => app.errorView.errorCallBack(err));
 });
 
+app.put('/api/v1/books/update/single-book:id', (request, response) => {
+  let key = `UPDATE books SET title=$1, author=$2, isbn=$3, image_url=$4, description=$5 WHERE id=$6`;
+  let values = [
+    request.body.title,
+    request.body.author,
+    request.body.isbn,
+    request.body.image_url,
+    request.body.description,
+    request.params.id
+  ];
+  client.query(key, values)
+    .then(() => response.send('update completed'))
+    .catch(err => app.errorView.errorCallBack(err));
+});
 
 
 app.get('*', (req, res) => res.redirect(CLIENT_URL));
