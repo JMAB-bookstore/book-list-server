@@ -28,7 +28,7 @@ app.get('/api/v1/books/:id', (request, response) => {
   let key = `SELECT * FROM books WHERE id=$1`;
   let value = [request.params.id];
   client.query(key, value)
-    .then( results => response.send(results.rows) )
+    .then( results => response.send(results.rows[0]) ) // included 0 index
     .catch( console.error);
 });
 
